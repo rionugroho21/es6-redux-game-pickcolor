@@ -12,5 +12,12 @@ export default class InfoPanel {
     // 2. Update tampilan skor, jumlah klik yg benar (hit), & yang salah (miss)
     this.colorLabel.textContent = state.realColor.label;
     this.colorLabel.style.color = state.altColor.value;
+
+    const score = document.getElementById('score');
+    score.textContent = 'Skor : ' + state.score;
+    const hits = document.getElementById('hits');
+    hits.textContent = 'Benar : ' + state.hit;
+    const misses = document.getElementById('misses');
+    misses.textContent = 'Salah : ' + state.miss;
   };
 }

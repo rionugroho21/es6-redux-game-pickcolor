@@ -14,23 +14,23 @@ export function setColors(realColor, altColor) {
 }
 
 export function hit() {
+  const state = window.ReduxStore.getState();
   // bikin action untuk update hit & skor.
   // hit = tambah skor (+1)
-  return function(dispatch) {
-    dispatch({
-      type: 'HIT',
-      hit
-    });
-  };
+  window.ReduxStore.dispatch({
+    type: types.HIT,
+    hit: state.hit + 1,
+    score: state.score + 1
+  });
 }
 
 export function miss() {
+  const state = window.ReduxStore.getState();
   // bikin action untuk update miss & skor
   // miss = kurangi skor (-1)
-  return function(dispatch) {
-    dispatch({
-      type: 'MISS',
-      miss
-    });
-  };
+  window.ReduxStore.dispatch({
+    type: types.MISS,
+    miss: state.miss + 1,
+    score: state.score - 1
+  });
 }

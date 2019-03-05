@@ -22,11 +22,19 @@ const reducer = function(state = initialState, action) {
         altColor: action.altColor
       };
     case types.HIT:
-    // update state dengan nilai hit & skor yang baru
-    //return [...state, { hit: action.hit }];
+      // update state dengan nilai hit & skor yang baru
+      return {
+        ...state,
+        hit: action.hit,
+        score: action.score
+      };
     case types.MISS:
-    // update state dengan nilai miss & skor yang baru
-    //return [...state, { miss: action.miss }];
+      // update state dengan nilai miss & skor yang baru
+      return {
+        ...state,
+        miss: action.miss,
+        score: action.score
+      };
   }
 };
 
